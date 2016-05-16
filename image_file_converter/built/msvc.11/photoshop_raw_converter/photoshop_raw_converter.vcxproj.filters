@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="main">
+      <UniqueIdentifier>{9ba41825-4228-465f-af55-4343465e8b97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="praw">
+      <UniqueIdentifier>{16ed467c-a1d1-42e4-9606-d68a50bce0df}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\photoshop_raw_converter\main\main.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\photoshop_raw_converter\praw\praw.cpp">
+      <Filter>praw</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\photoshop_raw_converter\praw\praw.hpp">
+      <Filter>praw</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
