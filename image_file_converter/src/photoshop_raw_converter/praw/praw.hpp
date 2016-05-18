@@ -13,7 +13,7 @@ namespace praw
 
 		int Init(std::string raw_filename, size_t w, size_t h, size_t c);
 
-		int ToTiff(const std::string & tif_filename);
+		int ToTiff(const std::string & tif_filename, bool lzw_compress = false);
 
 	protected:
 

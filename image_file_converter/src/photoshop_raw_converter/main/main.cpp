@@ -11,6 +11,7 @@ DEFINE_string(out,     "",       "* tif image");
 DEFINE_int64(w, 0,      "image width");
 DEFINE_int64(h, 0,      "image height");
 DEFINE_int64(c, 0,      "image channel");
+DEFINE_bool(lzw, false,      "LZW compress");
 
 void main(int argc, char ** argv)
 {
@@ -33,7 +34,7 @@ void main(int argc, char ** argv)
 		}
 
 		praw::PhotoshopRawReader raw_reader(FLAGS_in, FLAGS_w, FLAGS_h, FLAGS_c);
-		if (raw_reader.ToTiff(FLAGS_out))
+		if (raw_reader.ToTiff(FLAGS_out, FLAGS_lzw))
 		{
 			std::cout<<"error: converting failed."<<std::endl;
 			break;

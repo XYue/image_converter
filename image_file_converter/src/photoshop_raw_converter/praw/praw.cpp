@@ -50,7 +50,7 @@ namespace praw
 		return ret;
 	}
 
-	int PhotoshopRawReader::ToTiff( const std::string & tif_filename )
+	int PhotoshopRawReader::ToTiff( const std::string & tif_filename, bool lzw_compress /*= false*/ )
 	{
 		int ret = -1;
 
@@ -79,7 +79,8 @@ namespace praw
 
 
 			char **param=NULL;
-			std::stringstream sstr_block_size;			
+			std::stringstream sstr_block_size;		
+			if (lzw_compress) param = CSLAddString(param,"COMPRESS=LZW");
 			param = CSLAddString(param,"TILED=YES");
 			param = CSLAddString(param,"BIGTIFF=IF_SAFER");
 			sstr_block_size.clear(); sstr_block_size.str("");
